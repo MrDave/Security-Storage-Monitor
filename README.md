@@ -10,7 +10,26 @@ Use `pip` (or `pip3`, if there is a conflict with Python2) to install dependenci
 ```
 pip install -r requirements.txt
 ```
-Project and database settings are stored in `project/settings.py` while sensitive data (database's host, user, password and the secret key) as well as the debug boolean are stored in `.env` file.
+Project and database settings are stored in `project/settings.py` while sensitive data as well as the debug boolean are stored in `.env` file (see Environment variables subsection).
+
+### Environment variables
+
+For the project to work correctly, several environmental variables have to be set in `.env` file: 
+
+- `DB_HOST` - which host to use when connecting to the database
+- `DB_PORT` - the port to use when connecting to the database
+- `DB_NAME` - the name of the database to use
+- `DB_USER` - the username to use when connecting to the database
+- `DB_PASSWORD` - the password to use when connecting to the database
+- `SECRET_KEY` - a secret key for a particular Django installation
+- `ALLOWED_HOSTS` - a list of strings representing the host/domain names that this Django site can serve
+
+Details about each setting can be found in [Django documentation](https://docs.djangoproject.com/en/4.2/ref/settings/).
+
+Optional variable `DEBUG` can be included to toggle debugging mode:
+```
+DEBUG = True
+```
 
 ## How to run
 
